@@ -1,0 +1,27 @@
+public class Jugador {
+
+    private integer dado_max = 6;
+    private integer posicion = 0;
+ 
+    public integer tirarDado() {
+	 integer aletorio = integer.valueof(Math.random() * dado_max) + 1;
+     return aletorio;
+ }
+ 
+ 
+ 	public integer  getPosicion() {
+	 	return this.posicion;
+ 	}
+ 	
+ 	public void setPosicion(integer posicion) {
+		 this.posicion = posicion;
+}
+    
+     public void avanzar(integer jugada) {
+	 integer valorDado = tirarDado();
+	 System.debug(jugada+' Dado arroja '+valorDado);
+	 posicion += valorDado;
+	 	
+		
+}
+}
