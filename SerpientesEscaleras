@@ -1,0 +1,8 @@
+public class SerpientesEscaleras {
+    
+    public void main (){
+        Jugador jugador = new Jugador();
+		Tablero tablero = new Tablero(jugador);
+    }
+
+}
