@@ -1,0 +1,99 @@
+public class Tablero {
+
+    public  static integer MAX_TABLERO = 25;
+	private boolean play =true;
+	private Jugador jugador;
+	private integer jugada=1;
+    
+    public Tablero(Jugador jugador){
+      this.jugador = jugador;
+	  iniciarJuego();
+	}  
+
+	private void iniciarJuego() {
+		 
+		 while(play) {
+			 jugador.avanzar(jugada);
+			 jugada++;
+			 validarFin(jugador.getPosicion());
+			 }
+	 }
+    
+    private void validarPosicion(integer posicion) {
+		
+		switch on posicion{
+            
+            when 3 {    
+            jugador.setPosicion(11);
+			System.debug(jugada+' Jugador sube por escalera  a:' + jugador.getPosicion());
+            jugada++;
+			
+            }
+            
+            when 6{    
+            jugador.setPosicion(17);
+			System.debug(jugada+' Jugador sube por escalera  a:' + jugador.getPosicion());
+			jugada++;
+            }
+            
+            when 9 {    
+            jugador.setPosicion(18);
+			System.debug(jugada+' Jugador sube por escalera  a:' + jugador.getPosicion());
+			jugada++;
+            }
+            
+            when 10 {    
+            jugador.setPosicion(12);
+			System.debug(jugada+' Jugador sube por escalera  a:' + jugador.getPosicion());
+			jugada++;
+            }
+            
+            
+            when 14{
+            jugador.setPosicion(4);
+			System.debug(jugada+' Jugador deciende   a:' + jugador.getPosicion());
+			jugada++;
+            }
+            
+            when 19{
+            jugador.setPosicion(8);
+			System.debug(jugada+' Jugador deciende   a:' + jugador.getPosicion());
+			jugada++;
+        }
+            
+            when 22{
+            jugador.setPosicion(20);
+			System.debug(jugada+' Jugador deciende   a:' + jugador.getPosicion());
+			jugada++;
+            }
+            
+            when 24{
+            jugador.setPosicion(16);
+			System.debug(jugada+' Jugador deciende   a:' + jugador.getPosicion());
+			jugada++;
+            }
+            
+            when else {
+                system.debug(jugada + ' Jugador avanza a cuadro: '+ jugador.getPosicion());
+                jugada++;
+            }
+	
+        }
+		
+	}
+	
+	public void validarFin(integer posicion) {
+		if(posicion >= MAX_TABLERO){
+			System.debug(jugada+ ' El jugador llego o supero el cuadro '+MAX_TABLERO);
+			System.debug((jugada+1)+ 'Fin' );
+			play = false;
+		}else {
+			validarPosicion(jugador.getPosicion());
+		}
+	}
+	
+	public integer getJugada() {
+		return this.jugada;
+	}
+
+}
