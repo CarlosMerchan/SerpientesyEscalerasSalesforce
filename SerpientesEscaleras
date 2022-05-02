@@ -1,8 +1,22 @@
 public class SerpientesEscaleras {
-    
-    public void main (){
-        Jugador jugador = new Jugador();
-		Tablero tablero = new Tablero(jugador);
-    }
 
-}
+    public void main (integer opcionTablero){   
+        
+        Jugador jugador = new Jugador();
+        switch on opcionTablero{
+            
+            when 1 {
+                Tablero tablero = new Tablero(jugador); 
+            }
+            when 2{
+                TableroMediano tableroMediano = new TableroMediano(jugador);
+            }
+            when 3{
+                TableroGrande tableroGrande = new TableroGrande(jugador);
+            }
+            
+        }
+       
+		
+    }
+    
